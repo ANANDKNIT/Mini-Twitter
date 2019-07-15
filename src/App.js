@@ -1,19 +1,20 @@
 import * as React from 'react';
 import './App.css';
-import Tweets from './component/Tweets'
+import CreateTweet from './component/CreateTweet'
 import Header from './component/AppBar'
-import Showcomments from './component/ShowComments'
-class App extends React.Component {
+import ShowComments from './component/ShowTweets'
 
-  render() {
-    return (
-      <div className="App">
+
+const App = () =>  {
+
+  return (
+    <div className="App">
       <Header />
-      <Showcomments />
-      <Tweets/>
-      </div>
-    );
-  }
+      <ShowComments />
+      <CreateTweet />
+    </div>
+  );
 }
+
 
 export default App;

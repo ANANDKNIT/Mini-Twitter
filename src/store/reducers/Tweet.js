@@ -20,6 +20,21 @@ const TweetReducer = (state = InitialState, action) => {
                 commentMessages: deleteTweet,
             };
             return newState;
+
+        case ActionTypes.EDIT_TWEET:
+            const editedValue = state.commentMessages.map(item => {
+                if (item.id === action.item.id) {
+                    item.value = action.item.value;
+                    return item;
+                }
+                else
+                    return item;
+            });
+            newState = {
+                ...state,
+                commentMessages: editedValue
+            }
+            return newState;
         default:
             return state;
     }
